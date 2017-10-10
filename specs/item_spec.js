@@ -15,4 +15,10 @@ describe("Item", function() {
     assert.strictEqual(item.bogofEligibility, false);
   });
 
+  it("should be able to change bogof Eligibility", function(){
+    
+    item.changeBogofEligibility();
+    assert.strictEqual(item.bogofEligibility, true);
+  });
+
 })
