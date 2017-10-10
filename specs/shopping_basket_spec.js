@@ -32,4 +32,11 @@ describe("Shopping Basket", function(){
     assert.strictEqual(shoppingBasket.items[0], nikeShoes);
   });
 
+  it("should give shopping basket total", function(){
+    shoppingBasket.add(ps4);
+    shoppingBasket.add(nikeShoes);
+    shoppingBasket.add(frozen);
+    assert.strictEqual(shoppingBasket.totalValue(), 318);
+  })
+
 })

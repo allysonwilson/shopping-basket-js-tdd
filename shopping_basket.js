@@ -11,4 +11,13 @@ ShoppingBasket.prototype.remove = function (item) {
   this.items.splice(itemIndex, 1);
 };
 
+ShoppingBasket.prototype.totalValue = function() {
+  var totalValue = 0;
+  for(item of this.items){
+    itemValue = item.price;
+    totalValue += itemValue;
+  }
+  return totalValue;
+}
+
 module.exports = ShoppingBasket;
