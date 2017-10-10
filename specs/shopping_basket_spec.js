@@ -32,11 +32,21 @@ describe("Shopping Basket", function(){
     assert.strictEqual(shoppingBasket.items[0], nikeShoes);
   });
 
-  it("should give shopping basket total", function(){
-    shoppingBasket.add(ps4);
+  // it("should give shopping basket total", function(){
+  //   shoppingBasket.add(ps4);
+  //   shoppingBasket.add(nikeShoes);
+  //   shoppingBasket.add(frozen);
+  //   assert.strictEqual(shoppingBasket.totalValue(), 318);
+  // })
+
+  it("should take 10% discount for shopping basket over £20", function(){
     shoppingBasket.add(nikeShoes);
+    assert.strictEqual(shoppingBasket.totalValue(), 54);
+  })
+
+  it("should not take 10% discount for shopping basket under £20", function(){
     shoppingBasket.add(frozen);
-    assert.strictEqual(shoppingBasket.totalValue(), 318);
+    assert.strictEqual(shoppingBasket.totalValue(), 8);
   })
 
 })
