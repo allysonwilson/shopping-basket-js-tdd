@@ -25,4 +25,11 @@ describe("Shopping Basket", function(){
     assert.strictEqual(shoppingBasket.items.length, 1);
   });
 
+  it("should be able to remove an item by name", function(){
+    shoppingBasket.add(ps4);
+    shoppingBasket.add(nikeShoes);
+    shoppingBasket.remove(ps4);
+    assert.strictEqual(shoppingBasket.items[0], nikeShoes);
+  });
+
 })
